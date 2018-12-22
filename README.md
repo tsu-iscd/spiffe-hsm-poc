@@ -125,7 +125,7 @@ $ go run example.go
 ```
 
 ### Содержание файла example.go
-
+```
 package main
 
 import (
@@ -172,3 +172,4 @@ func main() {
 	}
 	fmt.Println()
 }
+```
