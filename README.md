@@ -75,9 +75,9 @@ usr/local/lib/softhsm/ibsofthsm2.so
 Исправить файл `config`
 ```
 {
-    "Path" : "/usr/lib/softhsm/libsofthsm2.so",
+    "Path": "/usr/local/lib/softhsm/libsofthsm2.so",
     "TokenLabel": "test",
-    "Pin" : "password"
+    "Pin": "password"
 }
 ```
 
@@ -98,7 +98,7 @@ $ softhsm2-util --init-token --slot 0 --label test
 
 6. Test
 ```
-$ go test  -count=1
+$ go test -count=1
 ```
 
 ## Go implementation of the PKCS#11 API (miekg/pkcs11)
@@ -111,7 +111,7 @@ $ export SOFTHSM_CONF=$PWD/softhsm2.conf
 
 Можно использовать уже инциализированный токен, для этого необохдимо в файле `example.go` поменять пароль на тот, что использован при ницализации. То есть пароль при инциализации токена должен соответствоать паролю в `example.go`
 ```
-$ softhsm2-utill --init-token --slot 0 --label test --pin 1234
+$ softhsm2-utill --init-token --slot 0 --label test --pin password
 ```
 3. Use `libsofthsm2.so` as the pkcs11 module:
 ```
